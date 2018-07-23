@@ -4,19 +4,12 @@
 #
 Name     : R-reprex
 Version  : 0.2.0
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/reprex_0.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/reprex_0.2.0.tar.gz
 Summary  : Prepare Reproducible Example Code via the Clipboard
 Group    : Development/Tools
 License  : MIT
-Requires: R-callr
-Requires: R-clipr
-Requires: R-devtools
-Requires: R-markdown
-Requires: R-rmarkdown
-Requires: R-styler
-Requires: R-whisker
 BuildRequires : R-callr
 BuildRequires : R-clipr
 BuildRequires : R-devtools
@@ -38,11 +31,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532310913
+export SOURCE_DATE_EPOCH=1532314923
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532310913
+export SOURCE_DATE_EPOCH=1532314923
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
