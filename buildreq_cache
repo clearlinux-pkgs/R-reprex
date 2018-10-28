@@ -1,8 +1,11 @@
-0.2.0
-R-markdown
-R-styler
-R-devtools
+0.2.1
 R-callr
 R-clipr
+R-devtools
+R-fs
+R-markdown
+R-rlang
 R-rmarkdown
+R-styler
 R-whisker
+R-withr
