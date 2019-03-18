@@ -4,25 +4,17 @@
 #
 Name     : R-reprex
 Version  : 0.2.1
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/reprex_0.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/reprex_0.2.1.tar.gz
 Summary  : Prepare Reproducible Example Code via the Clipboard
 Group    : Development/Tools
 License  : MIT
-Requires: R-callr
-Requires: R-clipr
-Requires: R-devtools
-Requires: R-fs
-Requires: R-rlang
-Requires: R-rmarkdown
-Requires: R-styler
-Requires: R-whisker
-Requires: R-withr
 BuildRequires : R-callr
 BuildRequires : R-clipr
 BuildRequires : R-devtools
 BuildRequires : R-fs
+BuildRequires : R-markdown
 BuildRequires : R-rlang
 BuildRequires : R-rmarkdown
 BuildRequires : R-styler
@@ -31,8 +23,15 @@ BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-small snippets of code to target formats that include both code and output.
-  The goal is to encourage the sharing of small, reproducible, and runnable
+# reprex <img src="man/figures/logo.png" align="right" />
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/reprex)](https://cran.r-project.org/package=reprex)
+[![Travis-CI Build
+Status](https://travis-ci.org/tidyverse/reprex.svg?branch=master)](https://travis-ci.org/tidyverse/reprex)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/reprex?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/reprex)
+[![Coverage
+status](https://codecov.io/gh/tidyverse/reprex/branch/master/graph/badge.svg)](https://codecov.io/github/tidyverse/reprex?branch=master)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 
 %prep
 %setup -q -c -n reprex
@@ -42,10 +41,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540769308
+export SOURCE_DATE_EPOCH=1552868213
 
 %install
-export SOURCE_DATE_EPOCH=1540769308
+export SOURCE_DATE_EPOCH=1552868213
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -81,8 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library reprex|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  reprex || :
 
 
 %files
@@ -121,3 +119,23 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/reprex/rstudio/addins.dcf
 /usr/lib64/R/library/reprex/templates/BETTER_THAN_NOTHING.R
 /usr/lib64/R/library/reprex/templates/REPREX.R
+/usr/lib64/R/library/reprex/tests/testthat.R
+/usr/lib64/R/library/reprex/tests/testthat/expressions.rds
+/usr/lib64/R/library/reprex/tests/testthat/helper.R
+/usr/lib64/R/library/reprex/tests/testthat/reference/srcref_reprex
+/usr/lib64/R/library/reprex/tests/testthat/test-env.R
+/usr/lib64/R/library/reprex/tests/testthat/test-filepaths.R
+/usr/lib64/R/library/reprex/tests/testthat/test-input.R
+/usr/lib64/R/library/reprex/tests/testthat/test-knitr-options.R
+/usr/lib64/R/library/reprex/tests/testthat/test-optionally.R
+/usr/lib64/R/library/reprex/tests/testthat/test-outfiles.R
+/usr/lib64/R/library/reprex/tests/testthat/test-pandoc.R
+/usr/lib64/R/library/reprex/tests/testthat/test-reprex.R
+/usr/lib64/R/library/reprex/tests/testthat/test-session-info.R
+/usr/lib64/R/library/reprex/tests/testthat/test-stdout-stderr.R
+/usr/lib64/R/library/reprex/tests/testthat/test-stringify-expression.R
+/usr/lib64/R/library/reprex/tests/testthat/test-styler.R
+/usr/lib64/R/library/reprex/tests/testthat/test-tidyverse.R
+/usr/lib64/R/library/reprex/tests/testthat/test-undo.R
+/usr/lib64/R/library/reprex/tests/testthat/test-utils.R
+/usr/lib64/R/library/reprex/tests/testthat/test-venues.R
