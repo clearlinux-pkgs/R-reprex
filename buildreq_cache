@@ -1,12 +1,2 @@
 0.3.0
-R-callr
-R-clipr
 R-devtools
-R-fs
-R-htmltools
-R-markdown
-R-rlang
-R-rmarkdown
-R-styler
-R-whisker
-R-withr
