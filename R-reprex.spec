@@ -4,7 +4,7 @@
 #
 Name     : R-reprex
 Version  : 0.3.0
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/reprex_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/reprex_0.3.0.tar.gz
 Summary  : Prepare Reproducible Example Code via the Clipboard
@@ -19,43 +19,35 @@ Requires: R-whisker
 Requires: R-withr
 BuildRequires : R-callr
 BuildRequires : R-clipr
-BuildRequires : R-devtools
 BuildRequires : R-fs
 BuildRequires : R-rlang
 BuildRequires : R-rmarkdown
 BuildRequires : R-whisker
 BuildRequires : R-withr
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-# reprex <img src="man/figures/logo.png" align="right" height="139" />
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/reprex)](https://cran.r-project.org/package=reprex)
-[![Travis-CI Build
-Status](https://travis-ci.org/tidyverse/reprex.svg?branch=master)](https://travis-ci.org/tidyverse/reprex)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/tidyverse/reprex?branch=master&svg=true)](https://ci.appveyor.com/project/tidyverse/reprex)
-[![Coverage
-status](https://codecov.io/gh/tidyverse/reprex/branch/master/graph/badge.svg)](https://codecov.io/github/tidyverse/reprex?branch=master)
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+small snippets of code to target formats that include both code and output.
+  The goal is to encourage the sharing of small, reproducible, and runnable
 
 %prep
 %setup -q -c -n reprex
+cd %{_builddir}/reprex
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571888668
+export SOURCE_DATE_EPOCH=1589780977
 
 %install
-export SOURCE_DATE_EPOCH=1571888668
+export SOURCE_DATE_EPOCH=1589780977
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
