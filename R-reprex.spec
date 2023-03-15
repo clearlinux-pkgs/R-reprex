@@ -4,7 +4,7 @@
 #
 Name     : R-reprex
 Version  : 2.0.2
-Release  : 52
+Release  : 53
 URL      : https://cran.r-project.org/src/contrib/reprex_2.0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/reprex_2.0.2.tar.gz
 Summary  : Prepare Reproducible Example Code via the Clipboard
